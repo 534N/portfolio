@@ -19,7 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/app/public')));
-
+app.set('views', __dirname + '/app/server/views');
+app.set('view engine', 'jade');
 // 
 // 
 var routes          = require('./app/server/routes/index');
@@ -75,17 +76,8 @@ app.use(function(err, req, res, next) {
 //     global.process.env.NODE_ENV = 'dev';
 // }
 
-var debug = require('debug')('tecApp');
-// var app = require('../app');
-
-app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/app/server/views');
-app.set('view engine', 'jade');
-
-var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
-});
 
 
 
-// module.exports = app;
+
+module.exports = app;
