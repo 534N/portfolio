@@ -1,0 +1,32 @@
+{
+  "name": "hello-world-element",
+  "version": "1.0.1",
+  "description": "Web Component example using VanillaJS.",
+  "authors": [
+    "WebComponents.org"
+  ],
+  "license": "MIT",
+  "main": "src/hello-world.html",
+  "keywords": [
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^0.5.1"
+  },
+  "homepage": "https://github.com/webcomponents/hello-world-element",
+  "_release": "1.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.1",
+    "commit": "688b443774cf06b7abfca0d3baad1950fbf7a7a7"
+  },
+  "_source": "git://github.com/webcomponents/hello-world-element.git",
+  "_target": "~1.0.1",
+  "_originalSource": "hello-world-element",
+  "_direct": true
+}

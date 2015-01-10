@@ -1,0 +1,265 @@
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+/* Neat 1.7.0
+ * http://neat.bourbon.io
+ * Copyright 2012-2014 thoughtbot, inc.
+ * MIT License */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+.browsers {
+  display: inline-block;
+  padding-top: 0;
+  text-align: center;
+  width: 100%; }
+  @media screen and (min-width: 53.75em) {
+    .browsers {
+      padding-top: 2em; } }
+  .browsers .browser-top-bar {
+    background-color: #ececec;
+    background-image: -webkit-linear-gradient(#ececec, #e7e7e7);
+    background-image: linear-gradient(#ececec, #e7e7e7);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: 0px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    height: 1.5em;
+    width: 100%; }
+  .browsers .browser-circle {
+    height: 0.5em;
+    width: 0.5em;
+    border-radius: 1em;
+    box-shadow: 0 1px 0px rgba(255, 255, 255, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin: 0.5em 0; }
+  .browsers .browser-circle:nth-child(1) {
+    background: #FF6F55;
+    margin-left: 0.5em; }
+  .browsers .browser-circle:nth-child(2) {
+    background: #F5B01D;
+    margin-left: 0.16667em; }
+  .browsers .browser-circle:nth-child(3) {
+    background: #51B151;
+    margin-left: 0.16667em; }
+  .browsers .browser {
+    border-bottom: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-align: left;
+    width: 20%; }
+  .browsers .browser:nth-child(1) {
+    background-color: #F0F0F0;
+    display: none; }
+    @media screen and (min-width: 53.75em) {
+      .browsers .browser:nth-child(1) {
+        display: inline-block; } }
+    .browsers .browser:nth-child(1) .browser-content {
+      background: url(/images/nearest/2.png);
+      background-color: #F0F0F0;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover; }
+  .browsers .browser:nth-child(2) {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    background-color: white;
+    width: 90%; }
+    @media screen and (min-width: 53.75em) {
+      .browsers .browser:nth-child(2) {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+        width: 50%; } }
+    .browsers .browser:nth-child(2) .browser-content {
+      background: url(/images/nearest/1.png);
+      background-color: white;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover; }
+  .browsers .browser:nth-child(3) {
+    background-color: #F0F0F0;
+    display: none; }
+    @media screen and (min-width: 53.75em) {
+      .browsers .browser:nth-child(3) {
+        display: inline-block; } }
+    .browsers .browser:nth-child(3) .browser-content {
+      background: url(/images/nearest/3.png);
+      background-color: #F0F0F0;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover; }
+  .browsers .browser-content {
+    border-left: 0px;
+    border-right: 0px;
+    height: 17em;
+    overflow: hidden; }
+    @media screen and (min-width: 53.75em) {
+      .browsers .browser-content {
+        height: 18em; } }
+
+.cover {
+  background: white;
+  border-top: 1px solid #E6E6E6;
+  height: 3.5em;
+  margin-top: -1em;
+  position: relative;
+  width: 100%;
+  z-index: 999; }
+
+@font-face {
+  font-family: simplifica;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/SIMPLIFICA.eot?#iefix") format("embedded-opentype"), url("/fonts/SIMPLIFICA.woff2") format("woff2"), url("/fonts/SIMPLIFICA.woff") format("woff"), url("/fonts/SIMPLIFICA.ttf") format("truetype"), url("/fonts/SIMPLIFICA.svg#simplifica") format("svg"); }
+html {
+  background-color: #fff; }
+  html body {
+    font-family: "simplifica"; }
+    html body .topnav {
+      margin: 20px auto; }
+    html body .intro {
+      text-align: center; }
+    html body .project {
+      text-align: center;
+      color: grey;
+      font-size: 0.8em;
+      font-family: Verdana, Geneva, sans-serif; }
+    html body .keywords {
+      text-align: center;
+      color: grey;
+      font-size: 0.8em;
+      font-family: Verdana, Geneva, sans-serif; }
+      html body .keywords a {
+        margin: 0 10px 0 10px; }
+    html body section {
+      max-width: 68em;
+      margin-left: auto;
+      margin-right: auto; }
+      html body section::after {
+        clear: both;
+        content: "";
+        display: table; }
+      html body section .social {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 40.29137%;
+        text-align: left;
+        padding: 3.5em 20px 0 0;
+        color: gray; }
+        html body section .social:last-child {
+          margin-right: 0; }
+        @media screen and (max-width: 500px) {
+          html body section .social {
+            float: left;
+            display: block;
+            margin-right: 7.42297%;
+            width: 100%;
+            text-align: center; }
+            html body section .social:last-child {
+              margin-right: 0; } }
+        html body section .social a {
+          margin: 0 10px 0 10px;
+          cursor: pointer;
+          opacity: 0.3; }
+          html body section .social a:hover {
+            opacity: 0.6; }
+      html body section .avatar {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 14.70196%;
+        text-align: center;
+        opacity: 0.7; }
+        html body section .avatar:last-child {
+          margin-right: 0; }
+        @media screen and (max-width: 500px) {
+          html body section .avatar {
+            float: left;
+            display: block;
+            margin-right: 7.42297%;
+            width: 100%; }
+            html body section .avatar:last-child {
+              margin-right: 0; } }
+        html body section .avatar img {
+          height: 140px;
+          width: auto;
+          border-radius: 100px;
+          text-align: center; }
+      html body section .name {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 40.29137%;
+        font-family: "simplifica";
+        color: #888;
+        padding: 0 0 0 20px;
+        text-align: right; }
+        html body section .name:last-child {
+          margin-right: 0; }
+        @media screen and (max-width: 500px) {
+          html body section .name {
+            float: left;
+            display: block;
+            margin-right: 7.42297%;
+            width: 100%;
+            text-align: center; }
+            html body section .name:last-child {
+              margin-right: 0; } }
+      html body section .line-behind-text {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%;
+        border-bottom: 1px solid #cacaca;
+        text-align: center;
+        margin-bottom: 4.5em; }
+        html body section .line-behind-text:last-child {
+          margin-right: 0; }
+        html body section .line-behind-text h6 {
+          background: white;
+          color: gray;
+          display: inline-block;
+          font-family: "simplifica", sans-serif;
+          font-size: 2em;
+          font-weight: 500;
+          padding: 0 10px;
+          position: relative;
+          text-transform: uppercase;
+          top: 34px;
+          margin-bottom: 0.3em; }
+      html body section p a {
+        text-decoration: none;
+        opacity: 0.5;
+        display: inline-block;
+        font-family: Verdana, Geneva, sans-serif;
+        font-size: 1em;
+        font-weight: 500; }
+
+/*# sourceMappingURL=style.css.map */

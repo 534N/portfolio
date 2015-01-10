@@ -1,0 +1,21 @@
+{
+    "name": "hello-world-element",
+    "version": "1.0.1",
+    "description": "Web Component example using VanillaJS.",
+    "authors": [
+        "WebComponents.org"
+    ],
+    "license": "MIT",
+    "main": "src/hello-world.html",
+    "keywords": [
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "webcomponentsjs": "^0.5.1"
+    }
+}
