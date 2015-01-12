@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             js: {
-                files: ['gruntfile.js', 'app.js', 'app/**/*.js', 'public/javascripts/**', 'test/**/*.js'],
+                files: ['gruntfile.js', 'app.js', 'app/public/javascripts/*.js', 'test/**/*.js'],
                 tasks: ['jshint'],
                 options: {
                     livereload: true
@@ -22,18 +22,25 @@ module.exports = function(grunt) {
         },
         jshint: {
             all: {
-                src: ['gruntfile.js', 'app.js', 'app/**/*.js', 'public/js/**', 'test/**/*.js'],
+                src: ['gruntfile.js', 'app.js', 'app/public/javascripts/**', 'test/**/*.js'],
                 options: {
                     jshintrc: true
                 }
             }
         },
+        // uglify: {
+        //     my_target: {
+        //         files: {
+        //             ''
+        //         }
+        //     }
+        // },
         nodemon: {
             dev: {
-                script: 'app.js',
+                script: 'bin/www',
                 options: {
                     args: [],
-                    ignore: ['public/**'],
+                    ignore: ['app/public/app/bower_components/**'],
                     ext: 'js',
                     nodeArgs: ['--debug'],
                     delayTime: 1,
@@ -93,6 +100,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-mocha-test');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.option('force', true);
 
