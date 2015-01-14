@@ -8,13 +8,13 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: ['gruntfile.js', 'app.js', 'app/public/javascripts/*.js', 'test/**/*.js'],
-                tasks: ['jshint'],
+                tasks: ['jshint', 'uglify', 'cssmin'],
                 options: {
                     livereload: true
                 }
             },
             html: {
-                files: ['public/views/**', 'app/views/*.jade'],
+                files: [ 'app/server/views/*.jade' ],
                 options: {
                     livereload: true
                 }
@@ -28,13 +28,31 @@ module.exports = function(grunt) {
                 }
             }
         },
-        // uglify: {
-        //     my_target: {
-        //         files: {
-        //             ''
-        //         }
-        //     }
-        // },
+        uglify: {
+            my_target: {
+                files: {
+                    'app/public/javascripts/main.js': [
+                        'app/public/app/bower_components/jquery/dist/jquery.min.js',
+                        'app/public/app/bower_components/velocity/velocity.min.js',
+                        'app/public/app/bower_components/moment/min/moment-with-locales.min.js',
+                        'app/public/app/bower_components/angular/angular.min.js',
+                        'app/public/app/bower_components/angular-route/angular-route.min.js',
+                        'app/public/app/bower_components/lumx/dist/js/lumx.js',
+                        'app/public/javascripts/app.js'
+                    ]
+                }
+            }
+        },
+        cssmin: {
+            my_target: {
+                files: {
+                    'app/public/stylesheets/main.min.css': [
+                        'app/public/app/bower_components/lumx/dist/css/lumx.css',
+                        'app/public/stylesheets/style.css'
+                    ]
+                }
+            }
+        },
         nodemon: {
             dev: {
                 script: 'bin/www',
@@ -52,7 +70,9 @@ module.exports = function(grunt) {
             }
         },
         concurrent: {
-            tasks: ['nodemon', 'watch'],
+            task1: ['uglify', 'cssmin'],
+            task2: ['nodemon', 'watch'],
+            task3: ['jshint', 'mochaTest'],
             options: {
                 logConcurrentOutput: true
             }
@@ -100,10 +120,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-express');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-mocha-test');
-    // grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.option('force', true);
 
     //Default task(s).
-    grunt.registerTask('default', ['jshint', 'mochaTest', 'concurrent']);
+    grunt.registerTask('default', ['concurrent']);
 };
