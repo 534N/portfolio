@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', [
+	'ngRoute',
 	'lumx'
 ]);
 
@@ -11,7 +12,7 @@ angular.module('myApp')
 				})
 				.when('/map', {
 					templateUrl: '../partials/map',
-					controller: ''
+					controller: 'mapCtrl'
 				});
 		}
 	]);
