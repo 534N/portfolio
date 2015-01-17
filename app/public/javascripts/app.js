@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', [
 	'ngRoute',
-	'lumx'
+	'lumx',
+	'myController'
 ]);
 
 angular.module('myApp')
@@ -8,7 +9,8 @@ angular.module('myApp')
 		function($routeProvider) {
 			$routeProvider
 				.when('/', {
-
+					templateUrl: '../partials/portfolio',
+					controller: 'portfolioCtrl'
 				})
 				.when('/map', {
 					templateUrl: '../partials/map',

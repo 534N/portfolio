@@ -37,8 +37,10 @@ module.exports = function(grunt) {
                         'app/public/app/bower_components/moment/min/moment-with-locales.min.js',
                         'app/public/app/bower_components/angular/angular.min.js',
                         'app/public/app/bower_components/angular-route/angular-route.min.js',
+                        'app/public/app/bower_components/angular-resource/angular-resource.min.js',
                         'app/public/app/bower_components/lumx/dist/js/lumx.js',
-                        'app/public/javascripts/app.js'
+                        'app/public/javascripts/app.js',
+                        'app/public/javascripts/controller.js'
                     ]
                 }
             }
@@ -69,10 +71,22 @@ module.exports = function(grunt) {
                 }
             }
         },
+        mochaTest: {
+            test: {
+                options: {
+                    reporter: 'spec',
+                    captureFile: 'results.txt',
+                    quiet: false,
+                    clearRequireCache: false
+                },
+                src: ['test/node/*.js']
+            }
+        },
         concurrent: {
             task1: ['uglify', 'cssmin'],
             task2: ['nodemon', 'watch'],
-            task3: ['jshint', 'mochaTest'],
+            task3: ['jshint'],
+            task4: ['mochaTest'],
             options: {
                 logConcurrentOutput: true
             }
@@ -100,17 +114,6 @@ module.exports = function(grunt) {
                 // Set --debug
                 debug: false
             }
-        },
-        mochaTest: {
-            test: {
-                options: {
-                    reporter: 'spec',
-                    captureFile: 'results.txt',
-                    quiet: false,
-                    clearRequireCache: false
-                },
-                src: ['test/**/*.js']
-            }
         }
     });
 
@@ -126,5 +129,5 @@ module.exports = function(grunt) {
     grunt.option('force', true);
 
     //Default task(s).
-    grunt.registerTask('default', ['concurrent']);
+    grunt.registerTask('default', ['mochaTest', 'concurrent']);
 };

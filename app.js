@@ -25,13 +25,8 @@ app.set('views', __dirname + '/app/server/views');
 app.set('view engine', 'jade');
 // 
 // 
-var routes          = require('./app/server/routes/index');
-var users           = require('./app/server/routes/users');
-var resume          = require('./app/server/routes/resume');
-
+var routes = require('./app/server/routes/index');
 app.use('/', routes);
-app.use('/users', users);
-app.use('/resume', resume);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
