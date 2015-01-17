@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	section.topnav
+		.name.fs-display-4 Sean Yang
+		.avatar
+			img(src='/images/me.JPG')
+		.social
+			a.ss-icon.ss-facebook(href='https://www.facebook.com/yangxiaofan')
+			a.ss-icon.ss-twitter(href='https://twitter.com/534N_Y4NG')
+			a.ss-icon.ss-linkedin(href='https://www.linkedin.com/pub/sean-yang/29/b1a/648')
+			a.ss-icon.ss-octocat(href='https://github.com/534N')
+		
+
+	div.ng-view-class
+		div#sigPanel(ng-view)
+
+
+
+block scripts
+	//- 
+	//- 
+	script(src='/javascripts/googleAnalytics.js')
+	script(src="/javascripts/main.js")
