@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             js: {
-                files: ['gruntfile.js', 'app.js', 'app/public/javascripts/*.js', 'test/**/*.js'],
+                files: ['gruntfile.js', 'app.js', 'test/**/*.js'],
                 tasks: ['jshint', 'uglify', 'cssmin'],
                 options: {
                     livereload: true
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         },
         jshint: {
             all: {
-                src: ['gruntfile.js', 'app.js', 'app/public/javascripts/**', 'test/**/*.js'],
+                src: ['gruntfile.js', 'app.js', 'test/**/*.js'],
                 options: {
                     jshintrc: true
                 }
@@ -37,10 +37,9 @@ module.exports = function(grunt) {
                         'app/public/app/bower_components/moment/min/moment-with-locales.min.js',
                         'app/public/app/bower_components/angular/angular.min.js',
                         'app/public/app/bower_components/angular-route/angular-route.min.js',
+                        'app/public/app/bower_components/angular-animate/angular-animate.min.js',
                         'app/public/app/bower_components/angular-resource/angular-resource.min.js',
-                        'app/public/app/bower_components/lumx/dist/js/lumx.js',
-                        'app/public/javascripts/app.js',
-                        'app/public/javascripts/controller.js'
+                        'app/public/app/bower_components/lumx/dist/js/lumx.js'
                     ]
                 }
             }
@@ -49,8 +48,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'app/public/stylesheets/main.min.css': [
-                        'app/public/app/bower_components/lumx/dist/css/lumx.css',
-                        'app/public/stylesheets/style.css'
+                        'app/public/app/bower_components/lumx/dist/css/lumx.css'
                     ]
                 }
             }

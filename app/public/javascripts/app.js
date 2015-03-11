@@ -1,7 +1,9 @@
 var myApp = angular.module('myApp', [
 	'ngRoute',
-	'lumx',
-	'myController'
+	'ngAnimate',
+	'myController',
+	'myDirective',
+	'lumx'
 ]);
 
 angular.module('myApp')
@@ -12,9 +14,13 @@ angular.module('myApp')
 					templateUrl: '../partials/portfolio',
 					controller: 'portfolioCtrl'
 				})
-				.when('/map', {
-					templateUrl: '../partials/map',
-					controller: 'mapCtrl'
+				.when('/angularjs', {
+					templateUrl: '../partials/angularjs',
+					controller: 'angularjsCtrl'
+				})
+				.when('/resume', {
+					templateUrl: '../partials/resume',
+					controller: 'resumeCtrl'
 				});
 		}
 	]);

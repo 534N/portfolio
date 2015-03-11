@@ -1,0 +1,13 @@
+#angularjs
+	lx-tabs()
+		lx-tab(heading='Accordion')
+			p
+				user-accordion-group
+					user-accordion-pane(ng-repeat='obj in accordion_options', title="{{obj.name}}")
+						user-accordion-body(template='{{obj.template}}')
+		lx-tab(heading='Combo Box')
+			p
+				user-combobox(data='list')
+	p(class="p++")
+	p(class="p++")
+	

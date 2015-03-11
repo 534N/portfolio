@@ -6,19 +6,25 @@ block content
 		.avatar
 			img(src='/images/me.JPG')
 		.social
-			a.ss-icon.ss-facebook(href='https://www.facebook.com/yangxiaofan')
-			a.ss-icon.ss-twitter(href='https://twitter.com/534N_Y4NG')
-			a.ss-icon.ss-linkedin(href='https://www.linkedin.com/pub/sean-yang/29/b1a/648')
-			a.ss-icon.ss-octocat(href='https://github.com/534N')
-		
+			a.icon.mdi.mdi-facebook(href='https://www.facebook.com/yangxiaofan')
+			a.icon.mdi.mdi-twitter(href='https://twitter.com/534N_Y4NG')
+			a.icon.mdi.mdi-linkedin(href='https://www.linkedin.com/pub/sean-yang/29/b1a/648')
+			a.icon.mdi.mdi-github-circle(href='https://github.com/534N')
+	
+	.subnav(ng-controller='portfolioCtrl')
+		a.subnav-tab(href='#{{::tab.link}}', ng-repeat='tab in subnavOptions', ng-class="{active:isActive('/{{::tab.link}}')}") {{::tab.name}}
 
 	div.ng-view-class
-		div#sigPanel(ng-view)
+		div(ng-view)
 
 
 
 block scripts
 	//- 
 	//- 
-	script(src='/javascripts/googleAnalytics.js')
+	//- script(src='/javascripts/googleAnalytics.js')
 	script(src="/javascripts/main.js")
+	script(src="/javascripts/app.js")
+	script(src="/javascripts/controller.js")
+	script(src="/javascripts/directives/user-accordion-directive.js")
+	script(src="/javascripts/directives/user-combobox-directive.js")

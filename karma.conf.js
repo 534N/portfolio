@@ -19,6 +19,7 @@ module.exports = function(config) {
         'app/public/app/bower_components/angular-route/angular-route.js',
         'app/public/app/bower_components/angular-resource/angular-resource.js',
         'app/public/app/bower_components/angular-mocks/angular-mocks.js',
+        'app/public/app/bower_components/lumx/dist/js/lumx.js',
         'app/public/javascripts/*.js',
         'test/angular/*Spec.js'
     ],

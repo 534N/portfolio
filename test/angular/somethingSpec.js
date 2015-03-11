@@ -7,7 +7,7 @@ describe('An angular js test suite', function() {
 			this.reverse = function(input) {
 				return input.split('').reverse().join('');
 			};
-		})
+		});
 	}));
 
 	it('should have tests', function() {
@@ -39,23 +39,43 @@ describe('An angular js test suite', function() {
 
 		expect($scope.hello).toBe('world');
 		expect(ctrl.reverse('foo')).toBe('oof');
-	}))
+	}));
 });
 
 
-describe('tecApp', function() {
-	var $httpBackend;
-
+describe('Angular route test suite', function() {
 	beforeEach(module('myApp'));
+	 
+	it('should map to the correct controller and template', inject(function($route) {
+		// 
+		// default
+		//
+		expect($route.routes['/'].controller).toEqual('portfolioCtrl');
+		expect($route.routes['/'].templateUrl).toEqual('../partials/portfolio');
+		// 
+		// resume
+		//
+		expect($route.routes['/resume'].controller).toEqual('resumeCtrl');
+		expect($route.routes['/resume'].templateUrl).toEqual('../partials/resume');
 
 
-	beforeEach(inject(function (_$httpBackend) {
-		$httpBackend = _$httpBackend;
 	}));
+});
 
 
-	afterEach(function() {
-		$httpBackend.verifyNoOutstandingExpectation();
-		$httpBackend.verifyNoOutstandingRequest();
-	})
-})
+// describe('tecApp', function() {
+// 	var $httpBackend;
+
+// 	beforeEach(module('myApp'));
+
+
+// 	beforeEach(inject(function (_$httpBackend) {
+// 		$httpBackend = _$httpBackend;
+// 	}));
+
+
+// 	afterEach(function() {
+// 		$httpBackend.verifyNoOutstandingExpectation();
+// 		$httpBackend.verifyNoOutstandingRequest();
+// 	})
+// })
